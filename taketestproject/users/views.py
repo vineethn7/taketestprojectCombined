@@ -25,13 +25,14 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             uType = form.cleaned_data.get('user_type')
-            createUser.objects.create(username=username,userType=uType)
+            createUser.objects.create(username=username, userType=uType)
             messages.success(request, 'Account created for {}, You may login now!'.format(username))
             return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
+
 @login_required
 def profile(request):
-    return render(request,'users/profile.html')
+    return render(request, 'users/profile.html')

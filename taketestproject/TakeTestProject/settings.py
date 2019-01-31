@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'TestMaking.apps.TestmakingConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
     'TakeTestApp.apps.TaketestappConfig',

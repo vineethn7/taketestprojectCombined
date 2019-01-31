@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import TestForm
 from .models import TestM
 # Create your views here.
@@ -12,11 +13,14 @@ def post(request):
         # check whether it's valid:
         if form.is_valid():
             form.save()
+            TestName = form.cleaned_data.get('TestName')
+            File = form.cleaned_data.get('File')
             # process the data in form.cleaned_data as required
             # redirect to a new URL:
-            return redirect('TakeTest-Home')
+            messages.success(request, 'Test {} Posted successfully'.format('TestName'))
+            return redirect('Test-Making')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = TestForm()
-    return render(request, 'Test/post.html', {'title': 'Test-post', 'form': form})
+    return render(request, 'Test/post.html', {'form': form})

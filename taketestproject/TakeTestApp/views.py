@@ -6,4 +6,4 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'TakeTestApp/about.html')
+    return render(request, 'TakeTestApp/about.html', {'title' : 'About'})
