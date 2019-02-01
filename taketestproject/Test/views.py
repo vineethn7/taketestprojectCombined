@@ -18,7 +18,7 @@ def post(request):
             # process the data in form.cleaned_data as required
             # redirect to a new URL:
             messages.success(request, 'Test {} Posted successfully'.format('TestName'))
-            return redirect('Test-Making')
+            return redirect('TakeTest-Home')
 
     # if a GET (or any other method) we'll create a blank form
     else:
