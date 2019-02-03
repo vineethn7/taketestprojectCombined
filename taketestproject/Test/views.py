@@ -15,10 +15,8 @@ def post(request):
             form.save()
             TestName = form.cleaned_data.get('TestName')
             File = form.cleaned_data.get('File')
-            # process the data in form.cleaned_data as required
-            # redirect to a new URL:
-            messages.success(request, 'Test {} Posted successfully'.format('TestName'))
-            return redirect('TakeTest-Home')
+            messages.success(request, 'Test {} Posted successfully'.format(TestName))
+            return redirect('Test-Making')
 
     # if a GET (or any other method) we'll create a blank form
     else:

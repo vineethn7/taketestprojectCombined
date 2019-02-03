@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Test.forms import TestForm
+from Test.models import TestM
 
 # Create your views here.
 
@@ -23,4 +23,4 @@ def MakeTest(request):
     for qu in ques:
         quesBank[qu] = [options[x] for x in range(i, i + 4)]
         i = i + 4
-    return render(request, 'TestMaking/maketest.html', {'TestName': 'Test Make App', 'ques': ques, 'options': options, 'quesBank': quesBank})
+    return render(request, 'TestMaking/maketest.html', {'TestName': 'Test has begun', 'ques': ques, 'options': options, 'quesBank': quesBank})
